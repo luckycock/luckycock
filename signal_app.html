@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сигнал Lucky Jet</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #rocket {
+            width: 100px;
+            animation: fly 3s linear infinite;
+        }
+        @keyframes fly {
+            from { transform: translateY(100vh); }
+            to { transform: translateY(-100px); }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img id="rocket" src="https://media.istockphoto.com/id/491615068/photo/cartoon-rocket-space-ship.jpg?s=612x612&w=is&k=20&c=zLvjmAyI6ydRV0vlk329zrjyrdOKGLSoa9J-UR3P2Ms=" alt="Ракета">
+        <br>
+        <button onclick="getSignal()">Получить сигнал</button>
+        <div id="signal" style="margin-top: 20px;"></div>
+    </div>
+    <script>
+        function getSignal() {
+            const signal = (Math.random() * (2.01 - 1.01) + 1.01).toFixed(2);
+            document.getElementById("signal").innerText = "🎲 Сигнал: " + signal;
+        }
+    </script>
+</body>
+</html>
